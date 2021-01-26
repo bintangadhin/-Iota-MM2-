@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rentalin Aja</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Password</string>
+    <string name="daftar">Daftar</string>
+    <string name="email">Email</string>
+    <string name="nama">Nama</string>
+    <string name="onboarding">Menyediakan mobil rental yang dapat kamu pesan lewat smartphone android</string>
+    <string name="kategori_mobil">Kategori</string>
+    <string name="nama_mobil">Nama Mobil</string>
+    <string name="harga">3500000</string>
+    <string name="Rp">Rp.</string>
+    <string name="perhari">/hari</string>
+    <string name="ratingnya">5.0</string>
+</resources>
