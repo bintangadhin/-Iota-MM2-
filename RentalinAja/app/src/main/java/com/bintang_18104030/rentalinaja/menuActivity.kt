@@ -1,5 +1,6 @@
 package com.bintang_18104030.rentalinaja
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bintang_18104030.rentalinaja.adapter.mobilAdapter
 import com.bintang_18104030.rentalinaja.data.dataMobil
 import com.bintang_18104030.rentalinaja.databinding.ActivityMenuBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,11 +26,61 @@ class menuActivity : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: mobilAdapter
     private lateinit var binding: ActivityMenuBinding
+    private var backPressedTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val bottomNavigationView =
+            findViewById<BottomNavigationView>(R.id.bottom_nav)
+        //Set
+        bottomNavigationView.selectedItemId = R.id.beranda
+        //Perform ItemSelectedListener
+        bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.kategori -> {
+                    startActivity(
+                        Intent(
+                            applicationContext
+                            , kategoriMobil::class.java
+                        )
+                    )
+                    finish()
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+
+                }
+                R.id.detail_sewa -> {
+                    startActivity(
+                        Intent(
+                            applicationContext
+                            , detailSewa::class.java
+                        )
+                    )
+                    finish()
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.profil -> {
+                    startActivity(
+                        Intent(
+                            applicationContext
+                            , profilActivity::class.java
+                        )
+                    )
+                    finish()
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.beranda -> return@OnNavigationItemSelectedListener true
+            }
+            false
+        })
+
+
         firestore = Firebase.firestore
         auth = Firebase.auth
 
@@ -75,6 +127,15 @@ class menuActivity : AppCompatActivity() {
 
     private fun showSnackbarMessage(message: String) {
         Snackbar.make(binding.rvQuotes, message, Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()){
+            super.onBackPressed()
+        }else{
+            Toast.makeText(applicationContext,"tekan kembali untuk keluar", Toast.LENGTH_SHORT).show()
+        }
+        backPressedTime = System.currentTimeMillis()
     }
 
 }

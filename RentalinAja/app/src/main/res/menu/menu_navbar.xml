@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/beranda"
+        android:title="Beranda"
+        android:icon="@drawable/ic_home">
+
+    </item>
+    <item android:id="@+id/kategori"
+        android:title="Kategori"
+        android:icon="@drawable/ic_kategori">
+
+    </item>
+    <item android:id="@+id/detail_sewa"
+        android:title="Detail sewa"
+        android:icon="@drawable/ic_detail">
+
+    </item>
+    <item android:id="@+id/profil"
+        android:title="Profil"
+        android:icon="@drawable/ic_profil">
+
+    </item>
+</menu>
