@@ -12,6 +12,7 @@ import com.bintang_18104030.rentalinaja.databinding.ItemMobilBinding
 import com.bintang_18104030.rentalinaja.detailMobil
 import com.bintang_18104030.rentalinaja.helper.EXTRA_POSITION
 import com.bintang_18104030.rentalinaja.helper.EXTRA_QUOTE
+import com.bintang_18104030.rentalinaja.helper.REQUEST_UPDATE
 
 
 class mobilAdapter(private val activity: Activity): RecyclerView.Adapter<mobilAdapter.dataMobilViewHolder>() {
@@ -38,7 +39,7 @@ class mobilAdapter(private val activity: Activity): RecyclerView.Adapter<mobilAd
                 val intent = Intent(activity, detailMobil::class.java)
                 intent.putExtra(EXTRA_POSITION, position)
                 intent.putExtra(EXTRA_QUOTE, quote)
-
+                activity.startActivityForResult(intent, REQUEST_UPDATE)
             }
         }
     }

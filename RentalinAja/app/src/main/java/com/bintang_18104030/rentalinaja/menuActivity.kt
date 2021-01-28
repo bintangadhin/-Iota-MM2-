@@ -3,6 +3,7 @@ package com.bintang_18104030.rentalinaja
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.bintang_18104030.rentalinaja.databinding.ActivityMenuBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -32,7 +34,14 @@ class menuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth = Firebase.auth
 
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this@menuActivity, loginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val bottomNavigationView =
             findViewById<BottomNavigationView>(R.id.bottom_nav)
@@ -42,35 +51,19 @@ class menuActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.kategori -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , kategoriMobil::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, kategoriMobil::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
-
                 }
                 R.id.detail_sewa -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , detailSewa::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, detailSewa::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.profil -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , profilActivity::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, profilActivity::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
@@ -121,9 +114,9 @@ class menuActivity : AppCompatActivity() {
                         this@menuActivity, "Error adding document", Toast.LENGTH_SHORT
                     ).show()
                 }
-
         }
     }
+
 
     private fun showSnackbarMessage(message: String) {
         Snackbar.make(binding.rvQuotes, message, Snackbar.LENGTH_SHORT).show()
@@ -136,6 +129,15 @@ class menuActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,"tekan kembali untuk keluar", Toast.LENGTH_SHORT).show()
         }
         backPressedTime = System.currentTimeMillis()
+    }
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this@menuActivity, loginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
 }

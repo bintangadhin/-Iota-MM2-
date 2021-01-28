@@ -22,34 +22,19 @@ class detailSewa : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.beranda -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , menuActivity::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, menuActivity::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.kategori -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , kategoriMobil::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, kategoriMobil::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.profil -> {
-                    startActivity(
-                        Intent(
-                            applicationContext
-                            , profilActivity::class.java
-                        )
-                    )
+                    startActivity(Intent(applicationContext, profilActivity::class.java))
                     finish()
                     overridePendingTransition(0, 0)
                     return@OnNavigationItemSelectedListener true

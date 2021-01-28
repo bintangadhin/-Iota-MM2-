@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bintang_18104030.rentalinaja">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -9,15 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kategoriMobil"></activity>
+        <activity android:name=".pengaturanActivity"></activity>
+        <activity android:name=".editProfil" />
+        <activity android:name=".kategoriMobil" />
         <activity android:name=".detailSewa" />
         <activity android:name=".profilActivity" />
         <activity android:name=".detailMobil" />
         <activity
             android:name=".menuActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".registerActivity"
             android:screenOrientation="portrait" />
@@ -29,11 +30,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".splashActivity"
-            android:screenOrientation="portrait" />
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

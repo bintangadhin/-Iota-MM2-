@@ -1,10 +1,13 @@
 package com.bintang_18104030.rentalinaja
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.text.method.PasswordTransformationMethod
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.bintang_18104030.rentalinaja.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -27,7 +30,6 @@ class loginActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         auth = Firebase.auth
-
 
     }
 

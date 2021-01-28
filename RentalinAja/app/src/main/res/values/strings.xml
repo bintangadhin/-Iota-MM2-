@@ -13,4 +13,17 @@
     <string name="Rp">Rp.</string>
     <string name="perhari">/hari</string>
     <string name="ratingnya">5.0</string>
+    <string name="usernamenya">No Name</string>
+    <string name="emailnya">email@gmail.com</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="lengkapi">Edit data diri anda</string>
+    <string name="alamatnya">Edit alamat anda</string>
+    <string name="alamat">Alamat</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="pengaturannya">"Pengaturan "</string>
+    <string name="Logout">Logout</string>
+    <string name="tipemesin">Automatic</string>
+    <string name="liternya">55 Liter</string>
+    <string name="orangnya">5 Orang</string>
+    <string name="tipemesinya">SUV</string>
 </resources>
