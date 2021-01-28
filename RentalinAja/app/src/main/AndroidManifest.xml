@@ -30,12 +30,14 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
+        <activity android:name=".MapsFragment" />
         <activity android:name=".pengaturanActivity" />
         <activity android:name=".editProfil" />
         <activity android:name=".kategoriMobil" />
         <activity android:name=".detailSewa" />
-        <activity android:name=".profilActivity" />
+        <activity android:name=".profilActivity" >
+
+        </activity>
         <activity android:name=".detailMobil" />
         <activity
             android:name=".menuActivity"

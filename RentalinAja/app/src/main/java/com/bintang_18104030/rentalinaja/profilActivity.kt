@@ -93,8 +93,8 @@ class profilActivity : AppCompatActivity() , View.OnClickListener{
             startActivity(moveTo)
         }
         tv_lokasi.setOnClickListener{
-            val moveTo = Intent(this@profilActivity, MapsFragment::class.java)
-            startActivity(moveTo)
+            val intent = Intent(this, MapsFragment::class.java)
+            startActivity(intent)
         }
 
 
