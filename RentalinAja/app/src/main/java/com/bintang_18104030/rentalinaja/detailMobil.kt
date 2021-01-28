@@ -2,7 +2,9 @@ package com.bintang_18104030.rentalinaja
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import com.bintang_18104030.rentalinaja.adapter.mobilAdapter
 import com.bintang_18104030.rentalinaja.data.dataMobil
 import com.bintang_18104030.rentalinaja.databinding.ActivityDetailMobilBinding
@@ -14,12 +16,14 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 
+
 class detailMobil : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: mobilAdapter
     private lateinit var binding: ActivityDetailMobilBinding
     private var quote: dataMobil? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,4 +46,8 @@ class detailMobil : AppCompatActivity() {
         }!!
 
     }
+
+
+
+
 }

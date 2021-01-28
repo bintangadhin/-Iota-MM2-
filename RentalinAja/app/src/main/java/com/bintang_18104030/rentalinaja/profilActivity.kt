@@ -1,6 +1,8 @@
 package com.bintang_18104030.rentalinaja
 
+import android.app.ProgressDialog
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -16,12 +18,17 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_profil.*
-
+import java.util.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 class profilActivity : AppCompatActivity() , View.OnClickListener{
+
     private var backPressedTime = 0L
     private lateinit var binding: ActivityProfilBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +88,12 @@ class profilActivity : AppCompatActivity() , View.OnClickListener{
             val moveTo = Intent(this@profilActivity, editProfil::class.java)
             startActivity(moveTo)
         }
+        tv_lokasi.setOnClickListener{
+            val moveTo = Intent(this@profilActivity, MapsFragment::class.java)
+            startActivity(moveTo)
+        }
+
+
 
     }
     private fun updateUI(currentUser: FirebaseUser) {
@@ -124,6 +137,9 @@ class profilActivity : AppCompatActivity() , View.OnClickListener{
 
         }
     }
+
+
+
     private fun signOut() {
         auth.signOut()
         val currentUser = auth.currentUser
