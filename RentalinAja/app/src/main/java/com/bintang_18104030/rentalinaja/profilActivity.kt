@@ -88,6 +88,10 @@ class profilActivity : AppCompatActivity() , View.OnClickListener{
             val moveTo = Intent(this@profilActivity, editProfil::class.java)
             startActivity(moveTo)
         }
+        tv_pengaturan.setOnClickListener{
+            val moveTo = Intent(this@profilActivity, pengaturanActivity::class.java)
+            startActivity(moveTo)
+        }
         tv_lokasi.setOnClickListener{
             val moveTo = Intent(this@profilActivity, MapsFragment::class.java)
             startActivity(moveTo)
