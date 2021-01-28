@@ -28,6 +28,7 @@ class menuActivity : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: mobilAdapter
     private lateinit var binding: ActivityMenuBinding
+
     private var backPressedTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,7 +98,8 @@ class menuActivity : AppCompatActivity() {
                         val kategori_mobil = document.get("kategori_mobil").toString()
                         val nama_mobil = document.get("nama_mobil").toString()
                         val harga_sewa = document.get("harga_sewa").toString()
-                        quotesList.add(dataMobil(id, kategori_mobil, nama_mobil, harga_sewa))
+                        val gambar_mobil= document.get("gambar").toString()
+                        quotesList.add(dataMobil(id, kategori_mobil, nama_mobil, harga_sewa , gambar_mobil))
                     }
                     if (quotesList.size > 0) {
                         binding.rvQuotes.adapter = adapter

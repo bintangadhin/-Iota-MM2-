@@ -8,5 +8,6 @@ data class dataMobil(
     var id: String? = null,
     var kategori_moblil: String? = null,
     var nama_mobil: String? = null,
-    var harga_sewa: String? = null
+    var harga_sewa: String? = null,
+    var gambar_mobil: String?= null
 ) : Parcelable
