@@ -26,6 +26,7 @@ class mobilAdapter(private val activity: Activity): RecyclerView.Adapter<mobilAd
         return dataMobilViewHolder(view)
     }
 
+
     override fun getItemCount(): Int = this.listQuotes.size
     override fun onBindViewHolder(holder: dataMobilViewHolder, position: Int) {
         holder.bind(listQuotes[position],position)

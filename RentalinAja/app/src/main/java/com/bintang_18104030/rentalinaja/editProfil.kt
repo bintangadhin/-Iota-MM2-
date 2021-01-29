@@ -66,7 +66,6 @@ class editProfil : AppCompatActivity(), View.OnClickListener {
                     binding.inputAlamat.text.toString())
 
             }
-
         }
     }
     private fun editUser(nama: String, noHp: String, alamat: String) {

@@ -83,10 +83,10 @@ class menuActivity : AppCompatActivity() {
         binding.rvQuotes.setHasFixedSize(true)
         adapter = mobilAdapter(this)
 
-        loadQuotes()
+        loadMobil()
     }
 
-    private fun loadQuotes() {
+    private fun loadMobil() {
         GlobalScope.launch(Dispatchers.Main) {
             progressbar.visibility = View.VISIBLE
             val quotesList = ArrayList<dataMobil>()

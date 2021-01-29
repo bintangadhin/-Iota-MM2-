@@ -30,15 +30,24 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".MapsFragment" />
-        <activity android:name=".pengaturanActivity" />
-        <activity android:name=".editProfil" />
-        <activity android:name=".kategoriMobil" />
-        <activity android:name=".detailSewa" />
-        <activity android:name=".profilActivity" >
+        <activity android:name=".MapsFragment"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pengaturanActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".editProfil"
+            android:screenOrientation="portrait" />
+        <activity android:name=".kategoriMobil"
+            android:screenOrientation="portrait" >
 
         </activity>
-        <activity android:name=".detailMobil" />
+        <activity android:name=".detailSewa"
+            android:screenOrientation="portrait" />
+        <activity android:name=".profilActivity"
+            android:screenOrientation="portrait" >
+
+        </activity>
+        <activity android:name=".detailMobil"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".menuActivity"
             android:screenOrientation="portrait" />
