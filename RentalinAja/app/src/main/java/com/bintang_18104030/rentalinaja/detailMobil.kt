@@ -1,5 +1,6 @@
 package com.bintang_18104030.rentalinaja
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_detail_mobil.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class detailMobil : AppCompatActivity() {
@@ -34,16 +37,35 @@ class detailMobil : AppCompatActivity() {
 
         quote = intent.getParcelableExtra(EXTRA_QUOTE)
 
-
         quote?.let {
             binding.tvItemTitle.setText(it.kategori_moblil)
             binding.tvItemCategory.setText(it.nama_mobil)
             binding.tvItemDescription.setText(it.harga_sewa)
+            binding.tvRating.setText(it.rating)
+            binding.tvLiter.setText(it.liter)
+            binding.tvOrang.setText(it.orang)
+            binding.tvTipeMesin.setText(it.mesin)
+            binding.tvTipeMobil.setText(it.tipe_mobil)
+            binding.tvLink.setText(it.gambar_mobil)
+
             val imageView: ImageView = binding.gambarMobil.findViewById(R.id.gambar_mobil)
 
             val url = it.gambar_mobil
             Picasso.get().load(url).into(imageView)
         }!!
+
+        btnSewa.setOnClickListener{
+            val item_title = binding.tvItemTitle.text.toString()
+            val item_categori = binding.tvItemCategory.text.toString()
+            val item_description = binding.tvItemDescription.text.toString()
+            val link_gambar = binding.tvLink.text.toString()
+            val intent = Intent(this@detailMobil, sewaMobil::class.java)
+            intent.putExtra("itemtitle", item_title)
+            intent.putExtra("itemcategori", item_categori)
+            intent.putExtra("itemdescription", item_description)
+            intent.putExtra("linkgambar", link_gambar)
+            startActivity(intent)
+        }
 
     }
 

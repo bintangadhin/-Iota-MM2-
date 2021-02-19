@@ -99,7 +99,12 @@ class menuActivity : AppCompatActivity() {
                         val nama_mobil = document.get("nama_mobil").toString()
                         val harga_sewa = document.get("harga_sewa").toString()
                         val gambar_mobil= document.get("gambar").toString()
-                        quotesList.add(dataMobil(id, kategori_mobil, nama_mobil, harga_sewa , gambar_mobil))
+                        val liter= document.get("liter").toString()
+                        val mesin= document.get("mesin").toString()
+                        val orang= document.get("orang").toString()
+                        val rating= document.get("rating").toString()
+                        val tipe_mobil= document.get("tipe_mobil").toString()
+                        quotesList.add(dataMobil(id, kategori_mobil, nama_mobil, harga_sewa , gambar_mobil,liter,mesin,orang,rating,tipe_mobil))
                     }
                     if (quotesList.size > 0) {
                         binding.rvQuotes.adapter = adapter

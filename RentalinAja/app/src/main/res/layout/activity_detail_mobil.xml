@@ -175,7 +175,7 @@
                 android:textAlignment="center"
                 android:drawableTop="@drawable/ic_tipe_mobil"
                 android:drawablePadding="5dp"
-                android:text="@string/tipemesinya"
+                android:text="@string/tipemobilnya"
                 android:textColor="@color/colorFontAbu"
                 android:background="@drawable/ic_bg_gambar"
                 android:textSize="12dp"
@@ -186,18 +186,28 @@
             </LinearLayout>
         </LinearLayout>
         <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="270dp"
+            android:id="@+id/btnSewa"
+            android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_gravity="center"
             android:layout_marginTop="55dp"
-            android:background="@drawable/ic_tombol"
+            android:background="@drawable/ic_button"
             android:fontFamily="@font/fontcera"
             android:text="Sewa Mobil"
             android:textAllCaps="false"
             android:backgroundTint="@color/colorPrimaryDark"
             android:textColor="#fff"
             android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tv_link"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:textColor="@color/colorFontAbu"
+        android:text="a"
+        android:textAlignment="textEnd"
+        android:textSize="13sp" />
 
 
 </LinearLayout>

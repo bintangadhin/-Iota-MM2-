@@ -39,6 +39,7 @@ class mobilAdapter(private val activity: Activity): RecyclerView.Adapter<mobilAd
             binding.tvItemTitle.text = quote.kategori_moblil
             binding.tvItemCategory.text = quote.nama_mobil
             binding.tvItemDescription.text = quote.harga_sewa
+            binding.tvRating.text = quote.rating
             val imageView: ImageView = binding.gambarMobil.findViewById(R.id.gambar_mobil)
 
             val url = quote.gambar_mobil

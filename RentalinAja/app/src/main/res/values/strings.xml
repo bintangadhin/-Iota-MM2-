@@ -27,4 +27,11 @@
     <string name="orangnya">5 Orang</string>
     <string name="tipemesinya">SUV</string>
     <string name="lokasi">Lokasi Rental</string>
+    <string name="tipemobilnya">SUV</string>
+    <string name="durasi">Durasi Sewa</string>
+    <string name="Totalnya">Total</string>
+    <string name="penyewa">Penyewa</string>
+    <string name="menunggu">Menunggu Pembayaran</string>
+    <string name="detailnya">Mohon lakukan pembayaran sebelum 2 x 24 jam dengan rincian sebagai berikut</string>
+    <string name="norek">888-099-4343-4934903</string>
 </resources>
